@@ -24,7 +24,7 @@ module.exports = (socket) => {
         //attach this user to the socket
         socket.user = user;
         //broadcast updated user list to all users
-        io.emit(USER_CONNECTED, connectedUsers);
+        io.sockets.emit(USER_CONNECTED, connectedUsers);
         
         console.log("**************")
         console.log(connectedUsers);
